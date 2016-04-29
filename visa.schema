@@ -9,8 +9,7 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `email_id` varchar(16) NOT NULL,
   `password` varchar(16) NOT NULL,
   `phone_no` int(10) NOT NULL,
-  `department` varchar(16),
-  PRIMARY KEY (`emp_code`)
+  `department` varchar(16)
 );
 
 -- --------------------------------------------------------
@@ -24,8 +23,7 @@ CREATE TABLE IF NOT EXISTS `manager` (
   `email_id` varchar(16) NOT NULL,
   `password` varchar(16) NOT NULL,
   `phone_no` int(11) NOT NULL,
-  `department` varchar(16),
-  PRIMARY KEY (`emp_code`)
+  `department` varchar(16)
 );
 
 -- --------------------------------------------------------
