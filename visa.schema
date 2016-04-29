@@ -1,20 +1,42 @@
-CREATE TABLE 'employee' (
-'id' INTEGER NOT NULL  DEFAULT NULL PRIMARY KEY AUTOINCREMENT REFERENCES 'users' ('id'),
-'manager' INTEGER DEFAULT NULL REFERENCES 'managers' ('id')
+-- --------------------------------------------------------
+-- Table structure for table `employee`
+--
+
+CREATE TABLE IF NOT EXISTS `employee` (
+  `emp_code` INTEGER PRIMARY KEY ASC AUTOINCREMENT,
+  `proj_code` int(11) NOT NULL,
+  `emp_name` varchar(16) NOT NULL,
+  `email_id` varchar(16) NOT NULL,
+  `password` varchar(16) NOT NULL,
+  `phone_no` int(10) NOT NULL,
+  `department` varchar(16),
+  PRIMARY KEY (`emp_code`)
 );
 
-CREATE TABLE 'managers' (
-'id' INTEGER NOT NULL  DEFAULT NULL PRIMARY KEY AUTOINCREMENT REFERENCES 'users' ('id'),
-'admin' INTEGER DEFAULT NULL REFERENCES 'admin' ('id')
+-- --------------------------------------------------------
+-- Table structure for table `manager`
+--
+
+CREATE TABLE IF NOT EXISTS `manager` (
+  `emp_code` INTEGER PRIMARY KEY ASC AUTOINCREMENT,
+  `proj_code` int(11) NOT NULL,
+  `emp_name` varchar(16) NOT NULL,
+  `email_id` varchar(16) NOT NULL,
+  `password` varchar(16) NOT NULL,
+  `phone_no` int(11) NOT NULL,
+  `department` varchar(16),
+  PRIMARY KEY (`emp_code`)
 );
 
-CREATE TABLE 'users' (
-'id' INTEGER NOT NULL  DEFAULT NULL PRIMARY KEY AUTOINCREMENT,
-'email' TEXT NOT NULL  DEFAULT 'NULL',
-'password' TEXT NOT NULL  DEFAULT 'NULL'
-);
+-- --------------------------------------------------------
+-- Table structure for table `visa_form`
+--
 
-CREATE TABLE 'admin' (
-'id' INTEGER NOT NULL  DEFAULT NULL PRIMARY KEY AUTOINCREMENT REFERENCES 'users' ('id'),
-'lawyers' INTEGER DEFAULT NULL
+CREATE TABLE IF NOT EXISTS `visa_form` (
+  `visa_id` INTEGER PRIMARY KEY ASC AUTOINCREMENT,
+  `emp_code` int(11) NOT NULL,
+  `country` varchar(16) NOT NULL,
+  `visa_type` varchar(3) NOT NULL,
+  `visa_status` varchar(20),
+  FOREIGN KEY (`emp_code`) REFERENCES `employee` (`emp_code`)
 );
