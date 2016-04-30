@@ -1,6 +1,6 @@
 """All views of our API"""
 from flask import Flask, request
-from visa import app, mailNinja, database, helper
+from visa import app, mailNinja, database, helper, notify
 import json
 import base64
 
@@ -53,6 +53,7 @@ def register():
     """
     Returns {"success": 1} or {"success": 0}
     """
+    print(request.form)
     emp_name = request.form['emp_name']
     email_id = request.form['email_id']
     password = request.form['password']

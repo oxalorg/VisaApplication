@@ -29,7 +29,9 @@ def sendRegisterMail(emp_code, email_id, emp_name, proj_code, department, phone_
                 Designation  : {:>20}
 
                 You can now login to our android app using the above credentials!
-                """.format(emp_name, proj_code, department, phone_no, emp_category)
+                """.format(emp_code, emp_name, proj_code, department, phone_no, emp_category)
     text_body = textwrap.dedent(text_body)
     sender = "Fractal Analytics"
     mailNinja.send_email(subject, sender, email_id, text_body, 2)
+
+#curl -d "proj_code=2&emp_name=lol&email_id=miteshninja@gmail.com&phone_no=3&department=lol&emp_category=admin&password=lol" http://127.0.0.1:8181/api/register
