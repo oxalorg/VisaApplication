@@ -11,7 +11,7 @@ def send_email(subject, sender, recipients, text_body, message_id):
     return requests.post(
         "https://api.mailgun.net/v3/miteshshah.com/messages",
         auth=("api", app.config['MAILGUN_API_KEY']),
-        data={"from": sender + " <mailgun@mitshi.in>",
+        data={"from": sender + " <mailgun@miteshshah.com>",
               "to": recipients,
               "subject": subject,
               "text": text_body,

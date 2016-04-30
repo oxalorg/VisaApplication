@@ -9,12 +9,11 @@ def getNotificationMail(source, sender):
         recipients = list(result)
         subject = "Employee Number {} has applied for visa registration.".format(sender)
         text_body = """\
-                    Employee ID: {{emp_id}:>20}
-                    Employee Name: {{name}:>20}
-                    Project Code: {{proj_code}:>20}
-
+                    Employee ID  : {:>20}
+                    Employee Name: {:>20}
+                    Project Code : {:>20}
                     Please log in to our android app to view the application.
-                    """
+                    """.format(emp_code, emp_name, proj_code)
         text_body = textwrap.dedent(text_body)
         return recipients, subject, text_body
 
@@ -27,7 +26,6 @@ def sendRegisterMail(emp_code, email_id, emp_name, proj_code, department, phone_
                 Department   : {:>20}
                 Phone No     : {:>20}
                 Designation  : {:>20}
-
                 You can now login to our android app using the above credentials!
                 """.format(emp_code, emp_name, proj_code, department, phone_no, emp_category)
     text_body = textwrap.dedent(text_body)

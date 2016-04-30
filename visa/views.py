@@ -53,7 +53,6 @@ def register():
     """
     Returns {"success": 1} or {"success": 0}
     """
-    print(request.form)
     emp_name = request.form['emp_name']
     email_id = request.form['email_id']
     password = request.form['password']
