@@ -2,8 +2,6 @@ import sqlite3
 from flask import g, Flask
 from visa import app
 
-DATABASE = '/home/ox/Dropbox/Projects/visaServer/visa.db'
-
 def get_db():
     db = getattr(g, '_database', None)
     if db is None:
