@@ -22,3 +22,16 @@ def query_db(query, args=(), one=False):
     rv = cur.fetchall()
     cur.close()
     return (rv[0] if rv else None) if one else rv
+
+def insert_db(query, args=()):
+    cur = get_db().execute(query, args)
+    cur.close()
+    return cur.lastrowid
+
+def commit_db():
+    try:
+        get_db().commit()
+    except:
+        return False
+    else:
+        return True

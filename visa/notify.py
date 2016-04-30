@@ -1,6 +1,6 @@
 """Helper functions for notifications"""
 import textwrap
-from visa import database
+from visa import database, mailNinja
 
 def getNotificationMail(source, sender):
     if source.lower() == 'employee':
@@ -17,3 +17,19 @@ def getNotificationMail(source, sender):
                     """
         text_body = textwrap.dedent(text_body)
         return recipients, subject, text_body
+
+def sendRegisterMail(emp_code, email_id, emp_name, proj_code, department, phone_no, emp_category):
+    subject = "You have registered for FRACTAL VISA APPLICATION process!"
+    text_body = """\
+                Employee ID  : {:>20}
+                Employee Name: {:>20}
+                Project_code : {:>20}
+                Department   : {:>20}
+                Phone No     : {:>20}
+                Designation  : {:>20}
+
+                You can now login to our android app using the above credentials!
+                """.format(emp_name, proj_code, department, phone_no, emp_category)
+    text_body = textwrap.dedent(text_body)
+    sender = "Fractal Analytics"
+    mailNinja.send_email(subject, sender, email_id, text_body, 2)

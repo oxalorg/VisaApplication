@@ -1,0 +1,3 @@
+INSERT INTO allusers (password) values (200)
+
+SELECT emp_code, password FROM allusers as au, manager as x where au.emp_code = 2 and password = lol and au.emp_code = x.emp_code LIMIT 1

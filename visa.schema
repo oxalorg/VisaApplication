@@ -1,40 +1,61 @@
--- --------------------------------------------------------
--- Table structure for table `employee`
---
+CREATE TABLE IF NOT EXISTS `allusers` (
+  `emp_code` INTEGER PRIMARY KEY ASC AUTOINCREMENT,
+  `password` varchar(50) NOT NULL
+);
 
 CREATE TABLE IF NOT EXISTS `employee` (
-  `emp_code` INTEGER PRIMARY KEY ASC AUTOINCREMENT,
+  `emp_code` INTEGER PRIMARY KEY,
   `proj_code` int(11) NOT NULL,
   `emp_name` varchar(16) NOT NULL,
   `email_id` varchar(16) NOT NULL,
-  `password` varchar(16) NOT NULL,
   `phone_no` int(10) NOT NULL,
-  `department` varchar(16)
+  `department` varchar(16),
+  FOREIGN KEY (`emp_code`) REFERENCES `allusers` (`emp_code`) ON DELETE CASCADE
 );
-
--- --------------------------------------------------------
--- Table structure for table `manager`
---
 
 CREATE TABLE IF NOT EXISTS `manager` (
-  `emp_code` INTEGER PRIMARY KEY ASC AUTOINCREMENT,
+  `emp_code` INTEGER PRIMARY KEY,
   `proj_code` int(11) NOT NULL,
   `emp_name` varchar(16) NOT NULL,
   `email_id` varchar(16) NOT NULL,
-  `password` varchar(16) NOT NULL,
   `phone_no` int(11) NOT NULL,
-  `department` varchar(16)
+  `department` varchar(16),
+  FOREIGN KEY (`emp_code`) REFERENCES `allusers` (`emp_code`) ON DELETE CASCADE
 );
-
--- --------------------------------------------------------
--- Table structure for table `visa_form`
---
 
 CREATE TABLE IF NOT EXISTS `visa_form` (
   `visa_id` INTEGER PRIMARY KEY ASC AUTOINCREMENT,
-  `emp_code` int(11) NOT NULL,
+  `emp_code` int(11) UNIQUE NOT NULL,
   `country` varchar(16) NOT NULL,
   `visa_type` varchar(3) NOT NULL,
+  `passport_no` INTEGER UNIQUE NOT NULL,
   `visa_status` varchar(20),
-  FOREIGN KEY (`emp_code`) REFERENCES `employee` (`emp_code`)
+  FOREIGN KEY (`emp_code`) REFERENCES `allusers` (`emp_code`) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS `files` (
+  `file_id` INTEGER PRIMARY KEY ASC AUTOINCREMENT,
+  `emp_code` int(11) NOT NULL,
+  `file_path` TEXT NOT NULL,
+  FOREIGN KEY (`emp_code`) REFERENCES `allusers` (`emp_code`) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS `admin` (
+  `emp_code` INTEGER PRIMARY KEY,
+  `proj_code` int(11) NOT NULL,
+  `emp_name` varchar(16) NOT NULL,
+  `email_id` varchar(16) NOT NULL,
+  `phone_no` int(11) NOT NULL,
+  `department` varchar(16),
+  FOREIGN KEY (`emp_code`) REFERENCES `allusers` (`emp_code`) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS `lawyer` (
+  `emp_code` INTEGER PRIMARY KEY,
+  `proj_code` int(11) NOT NULL,
+  `emp_name` varchar(16) NOT NULL,
+  `email_id` varchar(16) NOT NULL,
+  `phone_no` int(11) NOT NULL,
+  `department` varchar(16),
+  FOREIGN KEY (`emp_code`) REFERENCES `allusers` (`emp_code`) ON DELETE CASCADE
 );
