@@ -177,7 +177,7 @@ def admin_stats():
         result = database.query_db(query, one=True)
         result_dict = dict(result)
         query2 = "SELECT count(visa_type) as visa_approved from visa_form \
-                WHERE visa_status = approved"
+                WHERE visa_status = 'approved'"
         result2 = database.query_db(query, one=True)
         result2_dict = dict(result2)
         result_dict.update(result2_dict)
