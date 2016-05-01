@@ -172,13 +172,16 @@ def admin_stats():
             result = database.query_db(query, (visa,), True)
             visa_dict[visa] = result[0]
         return json.dumps(visa_dict)
-    elif stat_type == "visa_id":
+    elif stat_type == "visa_status":
         query = "SELECT count(visa_id) as visa_id from visa_form"
         result = database.query_db(query, one=True)
         result_dict = dict(result)
         query2 = "SELECT count(visa_type) as visa_approved from visa_form \
                 WHERE visa_status = 'approved'"
-        result2 = database.query_db(query, one=True)
+        result2 = database.query_db(query2, one=True)
         result2_dict = dict(result2)
+        print(result_dict, result2_dict)
         result_dict.update(result2_dict)
         return json.dumps(result_dict)
+    else:
+        return "Error.", 404
