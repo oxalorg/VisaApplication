@@ -152,7 +152,7 @@ def set_visa_status():
             notify.sendAcceptMail(emp_code, access_level)
             status = access_level
     else:
-        notify.sendDeniedMail(emp_code. access_level)
+        notify.sendDeniedMail(emp_code, access_level)
         status = "denied"
 
     query = "UPDATE visa_form set visa_status = ? where emp_code = ?"
