@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+        <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+    <script
+        src="https://code.jquery.com/jquery-2.2.3.min.js"
+        integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+        crossorigin="anonymous"></script>
+    <script src="visa.js"></script>
+    <div class="pull-right" id="logout">
+        <input class="btn btn-default" type="button" value="Logout" id="logoutBtn">
+    </div>
+    <div class="container" style="padding-top:50px;max-width:720px;">
+        <div class="row">
+        </div>
+        <div class="row">
+            <form class="form-horizontal" id="login">
+                <div class="form-group">
+                    <label class="col-xs-4 control-label">Employee Code</label>
+                    <div class="col-xs-4">
+                        <input type="text" class="form-control" name="id" id="empCode" placeholder="Code">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-4 control-label">Password</label>
+                    <div class="col-xs-4">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="********">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-offset-4 col-xs-4">
+                        <select class="form-control" name="category">
+                            <option value="employee">Employee</option>
+                            <option value="manager">Manager</option>
+                            <option value="admin">Admin</option>
+                            <option value="lawyer">Lawyer</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-offset-4 col-xs-4">
+                        <button type="submit" class="btn btn-primary" id="loginBtn">Login</button>
+                        <button type="button" class="btn btn-success" id="registerBtn">Register</button>
+                        <!-- <input class="btn btn-primary" type="submit" name="Submit" value="Login" id="loginBtn">
+                        <input class="btn btn-info" type="button" name="register" value="Register" id="registerBtn"> -->
+                    </div>
+                </div>
+            </form>
+        </div>
+        <section id="employeeHome">
+            <h3>Employee Details</h2>
+            <div class="row">
+                <table class="table table-striped table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>Unique Code</td>
+                            <td id="displayCode"></td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td id=displayName></td>
+                        </tr>
+                        <tr>
+                            <td>Phone No</td>
+                            <td id=displayContact></td>
+                        </tr>
+                        <tr>
+                            <td>Project Code</td>
+                            <td id=displayProjCode></td>
+                        </tr>
+                        <tr>
+                            <td>Department</td>
+                            <td id=displayDept></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3>Enter Visa Details</h3>
+            <div class="row">
+
+            </div>
+        </section>
+    </div>
+</body>
+</html>

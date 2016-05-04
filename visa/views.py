@@ -11,9 +11,12 @@ def executeSQL(query):
     Will be deprecated.
     """
     print(query)
-    result = database.query_db(query)
+    #result = database.query_db(query)
     # print([x for x in result])
-    return helper.row_jsonify(result)
+    #return helper.row_jsonify(result)
+    if 'delete' in query.lower() or 'drop' in query.lower():
+        return "Oh you slimy cheeky little kid! Quit messing with my database!"
+    return "Try harder, something more destructive. Maybe like little bobby tables! ;P"
 
 @app.route('/api/notify/', methods='POST')
 def send_email():
@@ -29,7 +32,7 @@ def send_email():
     #mailNinja.send_email(subject, sender, recipients, text_body, message_id)
     print(subject, sender, recipients, text_body, message_id)
 
-@app.route('/api/login', methods=['GET','POST'])
+@app.route('/api/login/', methods=['POST'])
 def login():
     """
     POST params:
@@ -111,6 +114,7 @@ def get_unapproved_emp():
     """
     emp_code = int(request.args.get('emp_code'))
     approved_by = request.args.get('approved_by')
+    query
     query = "SELECT * FROM visa_form where visa_status = ?"
     result = database.query_db(query, (approved_by,))
     return helper.row_jsonify(result)
@@ -130,6 +134,7 @@ def set_visa_form():
         VALUES (?, ?, ?, ?, ?)"
         database.insert_db(query, (emp_code, country.lower(), visa_type.lower(), passport_no.lower(), visa_status.lower()))
         database.commit_db()
+        notify.sendNotifyMail(emp_code, country.lower(), visa_type.lower())
         success = 1
     return json.dumps(dict([("success",success)]))
 
@@ -143,9 +148,12 @@ def set_visa_status():
     if action == "accept":
         if access_level == "lawyer":
             status = "approved"
+            notify.sendApprovedMail(emp_code)
         else:
+            notify.sendAcceptMail(emp_code, access_level)
             status = access_level
     else:
+        notify.sendDeniedMail(emp_code. access_level)
         status = "denied"
 
     query = "UPDATE visa_form set visa_status = ? where emp_code = ?"

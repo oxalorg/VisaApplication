@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="app">
+	<head>
+		<title>Fractal Visa App</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    	<script src="angular-visa.js"></script>
+	</head>
+
+	<body>
+        <div ng-controller="EmployeeController as e">
+            <form ng-submit="e.getEmployeeDetails()">
+                <input type="number" ng-model="e.empCode">
+                <input type="submit">
+            </form>
+            <tr ng-repeat="(k, v) in e.employee">
+                <td> {{k}} </td>
+                <td> {{v}} </td>
+            </tr>
+            </div>
+		</div>
+	</body>
+</html>
