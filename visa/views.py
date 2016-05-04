@@ -32,7 +32,7 @@ def send_email():
     #mailNinja.send_email(subject, sender, recipients, text_body, message_id)
     print(subject, sender, recipients, text_body, message_id)
 
-@app.route('/api/login/', methods=['POST'])
+@app.route('/api/login', methods=['POST'])
 def login():
     """
     POST params:
