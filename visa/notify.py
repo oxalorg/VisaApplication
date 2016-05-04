@@ -63,13 +63,13 @@ def sendAcceptMail(emp_code, access_level):
                 """.format(emp_code, access_level)
     text_body = textwrap.dedent(text_body)
     sender = "Fractal Analytics"
-    mailNinja.send_email(subject, sender, email_id, text_body, 3)
+    mailNinja.send_email(subject, sender, email, text_body, 3)
 
 
 def sendApprovedMail(emp_code):
     query = "SELECT email_id FROM employee where emp_code = ?"
     result = database.query_db(query, (emp_code,), True)
-    email = helper.row_jsonify(result, True)['email_id']
+    email = json.loads(helper.row_jsonify(result, True))['email_id']
     subject = "Your application has been approved!"
     text_body = """\
                 Hey Employee No {},
@@ -77,13 +77,13 @@ def sendApprovedMail(emp_code):
                 """.format(emp_code)
     text_body = textwrap.dedent(text_body)
     sender = "Fractal Analytics"
-    mailNinja.send_email(subject, sender, email_id, text_body, 4)
+    mailNinja.send_email(subject, sender, email, text_body, 4)
 
 
 def sendDeniedMail(emp_code, access_level):
         query = "SELECT email_id FROM employee where emp_code = ?"
         result = database.query_db(query, (emp_code,), True)
-        email = helper.row_jsonify(result, True)['email_id']
+        email = json.loads(helper.row_jsonify(result, True))['email_id']
         subject = "Your application has been DENIED by the {}".format(access_level)
         text_body = """\
                     Hey Employee No {},
@@ -91,4 +91,4 @@ def sendDeniedMail(emp_code, access_level):
                     """.format(emp_code)
         text_body = textwrap.dedent(text_body)
         sender = "Fractal Analytics"
-        mailNinja.send_email(subject, sender, email_id, text_body, 4)
+        mailNinja.send_email(subject, sender, email, text_body, 4)

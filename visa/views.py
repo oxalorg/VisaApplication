@@ -114,7 +114,6 @@ def get_unapproved_emp():
     """
     emp_code = int(request.args.get('emp_code'))
     approved_by = request.args.get('approved_by')
-    query
     query = "SELECT * FROM visa_form where visa_status = ?"
     result = database.query_db(query, (approved_by,))
     return helper.row_jsonify(result)
