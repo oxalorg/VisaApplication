@@ -32,11 +32,14 @@
     </head>
 
     <body>
-
+        <script
+            src="https://code.jquery.com/jquery-2.2.3.min.js"
+            integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+            crossorigin="anonymous"></script>
+            <script src="visa.js"> </script>
         <!-- Top content -->
-        <div class="top-content">
-
-            <div class="inner-bg">
+        <div class="top-content" id="top-content">
+            <div class="inner-bg" id="inner-bg">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
@@ -87,8 +90,56 @@
                 </div>
             </div>
 
-        </div>
 
+        </div>
+        <div class="container">
+            <div class="pull-right" id="logout">
+                <input class="btn btn-default" type="button" value="Logout" id="logoutBtn">
+            </div>
+
+        <section id="employeeHome">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text">
+                    <h1 style="color:#FFF"><strong style="color:#FFF">Fractal Analytics</strong> Employee Dashboard</h1>
+                    <div class="description" style="color:#FFF">
+                        <p style="color:#FFF">
+                            View your employee details below!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table login-form" style="color:#FFF">
+                    <tbody>
+                        <tr class="">
+                            <td>Unique Code</td>
+                            <td id="displayCode"></td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td id=displayName></td>
+                        </tr>
+                        <tr>
+                            <td>Phone No</td>
+                            <td id=displayContact></td>
+                        </tr>
+                        <tr>
+                            <td>Project Code</td>
+                            <td id=displayProjCode></td>
+                        </tr>
+                        <tr>
+                            <td>Department</td>
+                            <td id=displayDept></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2 style="color:#FFF"></h2>
+            <div class="row">
+
+            </div>
+        </section>
+    </div>
 
         <!-- Javascript -->
         <script src="assets/js/jquery-1.11.1.min.js"></script>

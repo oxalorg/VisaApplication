@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body style="background:#DDD">
+    <script>
+    window.onload = function() {
+        var empCode = window.location.href.split('?')[1];
+        empCode = empCode.split('=')[1];
+        document.getElementById("empCode").value = empCode;
+    }
+    </script>
+    <link rel="stylesheet" href="./css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+    <div class="container">
+
+        <div class="row">
+            <h3>Select File to upload:</h3>
+            <form  action="lal.php" method="post" enctype="multipart/form-data">
+                <label class="btn btn-primary" for="fileToUpload">
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                </label>
+
+                <input class="form-group btn btn-success" type="submit" value="Upload File" name="submit">
+                <input class="" type="hidden" name="empCode" id="empCode" />
+            </form>
+        </div>
+    </div>
+</body>
