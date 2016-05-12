@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">VisaApp</string>
+    <string-array name="empSpinner">
+        <item>Employee</item>
+        <item>Manager</item>
+        <item>Admin</item>
+        <item>Lawyer</item>
+    </string-array>
+</resources>

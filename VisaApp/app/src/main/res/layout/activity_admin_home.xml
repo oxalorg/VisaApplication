@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="fractal.visaapp.AdminHome"
+    app:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#777"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:contextClickable="false"
+        app:contentInsetLeft="10dp"
+        app:contentInsetStart="10dp"
+        android:elevation="4dp" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listAdmin"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/refreshAdminList" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Refresh List"
+        android:id="@+id/refreshAdminList"
+        android:layout_alignTop="@+id/adminBarStat"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Visa type frequency"
+        android:id="@+id/adminBarStat"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/refreshAdminList"
+        android:layout_toStartOf="@+id/refreshAdminList" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Applicant Frequency"
+        android:id="@+id/adminPieStat"
+        android:layout_alignTop="@+id/adminBarStat"
+        android:layout_toRightOf="@+id/refreshAdminList"
+        android:layout_toEndOf="@+id/refreshAdminList" />
+</RelativeLayout>

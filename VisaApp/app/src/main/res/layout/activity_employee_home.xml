@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="fractal.visaapp.EmployeeHome"
+    android:background="#2232">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#777"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:contextClickable="false"
+        app:contentInsetLeft="10dp"
+        app:contentInsetStart="10dp"
+        android:elevation="4dp" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Profile"
+        android:id="@+id/profile"
+        android:onClick="onClickViewProfile"
+        android:background="@drawable/button_primary"
+        android:padding="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_marginTop="68dp"
+        android:layout_below="@+id/my_toolbar"
+        android:layout_alignRight="@+id/button2"
+        android:layout_alignEnd="@+id/button2"
+        android:layout_alignLeft="@+id/bv"
+        android:layout_alignStart="@+id/bv"
+        android:minWidth="300dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Visa Details"
+        android:id="@+id/bv"
+        android:background="@drawable/button_primary"
+        android:onClick="evisa"
+        android:padding="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:minWidth="300dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload Documents"
+        android:id="@+id/button2"
+        android:onClick="upload"
+        android:background="@drawable/button_primary"
+        android:padding="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_marginTop="85dp"
+        android:minWidth="300dp"
+        android:layout_below="@+id/bv"
+        android:layout_alignLeft="@+id/bv"
+        android:layout_alignStart="@+id/bv" />
+</RelativeLayout>

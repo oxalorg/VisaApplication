@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".EmployeeListItem">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="Employee Details"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:padding="3dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ACCEPT"
+        android:id="@+id/acceptApplication"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REJECT"
+        android:id="@+id/rejectApplication"
+        android:layout_alignBottom="@+id/acceptApplication"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="2"
+        android:layout_below="@+id/textView2">
+
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="Employee Code:"
+                android:padding="5dip" />
+            <TextView
+                android:id="@+id/tec"
+                android:text=" "
+                android:gravity="right"
+                android:layout_weight="1" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="Employee Name:"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/tem"
+                android:text=""
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="Project Code:"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/pc"
+                android:text=""
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="Department Name:"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/dn"
+                android:gravity="right"
+                android:padding="3dip"
+                android:layout_weight="1" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="E-mail Id:"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/email"
+                android:text=""
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="Phone Number:"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/pn"
+                android:text=""
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Visa Details"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:paddingTop="10dp"
+            android:id="@+id/tv"
+            />
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="Visa Id:"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/vid"
+                android:text=""
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="Visa Type:"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/vtp"
+                android:text=""
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="Destination Country:"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/dc"
+                android:text=""
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:layout_column="0"
+                android:text="Passport No. :"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/pno"
+                android:text=""
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="View your uploaded doc"
+                android:id="@+id/button"
+                android:layout_column="1"
+                android:onClick="gotoVIew" />
+        </TableRow>
+
+    </TableLayout>
+
+
+</RelativeLayout>
